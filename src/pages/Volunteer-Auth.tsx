@@ -21,7 +21,7 @@ const InputField = ({ icon, ...props }: { icon: React.ReactNode;[key: string]: a
 // --- Main Authentication Form Component ---
 // NOTE: You need to install react-hot-toast: npm install react-hot-toast
 const UserAuthForm = () => {
-  const [mode, setMode] = useState<'login' | 'register'>('login');
+  const [mode, setMode] = useState<'login' | 'register'>('register');
   const [formData, setFormData] = useState({
     email: '',
     name: '',
