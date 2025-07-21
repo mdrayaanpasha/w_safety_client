@@ -3,7 +3,7 @@ import axios from 'axios';
 import toast, { Toaster } from 'react-hot-toast';
 import { Lock, User, Mail, MapPin, Check, X, Loader2, Shield } from 'lucide-react';
 
-const BACKEND_URL = 'http://localhost:3000';
+const BACKEND_URL = 'https://w-safety-server.vercel.app';
 
 // --- Helper Components ---
 
@@ -40,7 +40,7 @@ const UserVerificationCard = ({ user, onVerify, onReject, onImageClick }: { user
             {/* Image Section */}
             {user.filePath ? (
                 <img
-                    src={`${BACKEND_URL}${user.filePath}`}
+                    src={`${user.filePath}`}
                     alt={`${user.name}'s proof`}
                     className="w-24 h-24 rounded-lg object-cover cursor-pointer border-2 border-slate-700 hover:border-indigo-500 transition-all"
                     onClick={() => onImageClick(`${BACKEND_URL}${user.filePath}`)}

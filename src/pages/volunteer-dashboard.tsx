@@ -84,7 +84,7 @@ const VolunteerDashboard = () => {
     const [loading, setLoading] = useState(true);
     const [statusUpdating, setStatusUpdating] = useState(false);
 
-    const BACKEND_URL = 'http://localhost:3000';
+    const BACKEND_URL = 'https://w-safety-server.vercel.app';
     const token = localStorage.getItem('VL-TK');
 
     useEffect(() => {

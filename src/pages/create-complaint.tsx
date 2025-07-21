@@ -25,7 +25,7 @@ const App = () => {
 
     // Define the base URL for your backend API.
     // Make sure this is running and accessible from your frontend.
-    const BACKEND_URL = 'http://localhost:3000';
+    const BACKEND_URL = 'https://w-safety-server.vercel.app';
 
     // Defines the different types of abuse with corresponding icons.
     const abuseTypes = [

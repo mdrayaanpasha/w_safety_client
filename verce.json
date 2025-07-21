@@ -1,0 +1,32 @@
+{
+    "routes": [
+        {
+            "src": "/",
+            "dest": "/"
+        },
+        {
+            "src": "/volunteer-auth",
+            "dest": "/"
+        },
+        {
+            "src": "/admin/pendingRequests",
+            "dest": "/"
+        },
+        {
+            "src": "/activate/:token",
+            "dest": "/"
+        },
+        {
+            "src": "/admin/pendingRequests",
+            "dest": "/"
+        },
+        {
+            "src": "/dashboard",
+            "dest": "/"
+        },
+        {
+            "src": "/complain",
+            "dest": "/complaint/:id"
+        }
+    ]
+}

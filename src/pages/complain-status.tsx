@@ -61,7 +61,7 @@ const ComplaintDetailsPage = () => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState('');
 
-    const BACKEND_URL = 'http://localhost:3000';
+    const BACKEND_URL = 'https://w-safety-server.vercel.app';
 
     useEffect(() => {
         const fetchComplaintDetails = async () => {
