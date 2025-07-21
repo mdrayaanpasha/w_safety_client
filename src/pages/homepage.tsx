@@ -1,20 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { Menu, X, Shield, Users, HeartPulse, MapPin, ArrowRight, Phone, Mail } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { Menu, X, Shield, Users, HeartPulse, MapPin, Phone, Mail } from 'lucide-react';
 
-// --- Reusable Button Component ---
-const Button = ({ children, onClick, variant = 'primary', className = '' }: { children: React.ReactNode, onClick?: () => void, variant?: 'primary' | 'secondary' | 'outline', className?: string }) => {
-    const baseClasses = "px-6 py-3 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center gap-2";
-    const variants = {
-        primary: "bg-indigo-600 text-white hover:bg-indigo-700 shadow-lg hover:shadow-indigo-600/40 transform hover:-translate-y-0.5",
-        secondary: "bg-slate-700 text-slate-100 hover:bg-slate-600",
-        outline: "bg-transparent border-2 border-slate-600 text-slate-200 hover:bg-slate-800 hover:text-white"
-    };
-    return (
-        <button onClick={onClick} className={`${baseClasses} ${variants[variant]} ${className}`}>
-            {children}
-        </button>
-    );
-};
+
 
 
 // --- Navigation Bar ---

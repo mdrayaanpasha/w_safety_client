@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 
 const ActivateAccount = () => {
     const { token } = useParams<{ token: string }>();
     const [status, setStatus] = useState<string>('Activating...');
-    const BACKEND_URL = 'https://w-safety-server.vercel.app';
 
     useEffect(() => {
         const activateAccount = async () => {
@@ -17,7 +16,7 @@ const ActivateAccount = () => {
             try {
                 // Save token in localStorage as VL-TK
 
-                const response = await axios.post(`https://w-safety-server.vercel.app/api/user/activate`, {
+                await axios.post(`https://w-safety-server.vercel.app/api/user/activate`, {
                     token
                 });
 

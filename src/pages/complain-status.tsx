@@ -3,8 +3,8 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 // Importing icons needed for the refined design
 import {
-    FileText, User, Tag, CheckCircle, Scale, Shield, HeartPulse,
-    ClipboardList, AlertTriangle, Check, Loader, Clock, XCircle
+    Scale, Shield, HeartPulse,
+    Check, Loader, XCircle
 } from 'lucide-react';
 
 // --- Helper Component: Volunteer Status Timeline ---
