@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, Shield, Users, HeartPulse, MapPin, Phone, Mail } from 'lucide-react';
-
+import Logo from "../assets/PJ.png"
 
 
 
@@ -19,9 +19,8 @@ const Navbar = () => {
 
     const navLinks = [
         { name: 'Home', href: '#' },
-        { name: 'Report', href: '#' },
-        { name: 'Volunteer', href: '/auth' }, // Assuming '/auth' is the login/register page
-        { name: 'Admin', href: '/admin-verify' }, // Assuming '/admin-verify' is the admin page
+        { name: 'Report', href: '/complain' },
+        { name: 'Volunteer', href: '/volunteer-auth' }, // Assuming '/auth' is the login/register page
         { name: 'Contact', href: '#contact' },
     ];
 
@@ -32,7 +31,7 @@ const Navbar = () => {
                     {/* Logo */}
                     <div className="flex-shrink-0">
                         <a href="#" className="flex items-center gap-2">
-                            <img className="h-10 w-auto" src="https://raw.githubusercontent.com/mdrayaanpasha/women_safety_project/e7b0bffb121b6f8afe5470b70666e222b2d9d676/CLIENT/app/src/assets/logo.png" alt="Project Pukaar Logo" />
+                            <img className="h-10 w-auto" src={Logo} alt="Project Pukaar Logo" />
                             <span className="text-white text-xl font-bold">Project Pukaar</span>
                         </a>
                     </div>
@@ -112,7 +111,7 @@ const HeroSection = () => {
             {/* Glassmorphic Card */}
             <div className="relative z-10 w-full max-w-4xl mx-auto p-8 text-center ">
                 <img
-                    src="https://raw.githubusercontent.com/mdrayaanpasha/women_safety_project/e7b0bffb121b6f8afe5470b70666e222b2d9d676/CLIENT/app/src/assets/logo.png"
+                src={Logo}
                     alt="Safety App Logo"
                     className="w-20 h-20 mx-auto mb-4"
                 />
@@ -128,24 +127,16 @@ const HeroSection = () => {
 
                 {/* Call to Action Buttons */}
                 <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-                    <a href="/report" className="w-full sm:w-auto px-8 py-3 font-semibold text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-colors duration-300">
+                    <a href="/complain" className="w-full sm:w-auto px-8 py-3 font-semibold text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-colors duration-300">
                         Report an Incident
                     </a>
-                    <a href="/auth" className="w-full sm:w-auto px-8 py-3 font-semibold text-white bg-white/10 border border-white/20 rounded-full hover:bg-white/20 transition-colors duration-300">
+                    <a href="/volunteer-auth" className="w-full sm:w-auto px-8 py-3 font-semibold text-white bg-white/10 border border-white/20 rounded-full hover:bg-white/20 transition-colors duration-300">
                         Volunteer Login
                     </a>
                 </div>
             </div>
 
-            {/* Subtle "Learn More" scroll hint */}
-            <button
-                onClick={scrollToNextSection}
-                className="absolute bottom-10 z-20 flex flex-col items-center gap-2 text-white/50 hover:text-white transition-colors duration-300 animate-bounce"
-                aria-label="Scroll to next section"
-            >
-                <span className="text-sm font-medium">Learn More</span>
-                <ArrowDownIcon />
-            </button>
+    
         </section>
     );
 };
@@ -308,17 +299,12 @@ const GetInvolved = () => (
                 {/* Buttons styled to match the hero section for consistency */}
                 <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
                     <a
-                        href="/volunteer"
+                        href="/volunteer-auth"
                         className="w-full sm:w-auto px-8 py-3 font-semibold text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-colors duration-300"
                     >
                         Become a Volunteer
                     </a>
-                    <a
-                        href="/contact-us"
-                        className="w-full sm:w-auto px-8 py-3 font-semibold text-white bg-white/10 border border-white/20 rounded-full hover:bg-white/20 transition-colors duration-300"
-                    >
-                        Contact Us
-                    </a>
+                   
                 </div>
             </div>
         </div>
@@ -333,7 +319,7 @@ const Footer = () => (
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
                 <div className="col-span-2 md:col-span-1">
                     <a href="#" className="flex items-center gap-2">
-                        <img className="h-8 w-auto" src="https://raw.githubusercontent.com/mdrayaanpasha/women_safety_project/e7b0bffb121b6f8afe5470b70666e222b2d9d676/CLIENT/app/src/assets/logo.png" alt="Project Pukaar Logo" />
+                        <img className="h-8 w-auto" src={Logo} />
                         <span className="text-white text-lg font-bold">Project Pukaar</span>
                     </a>
                     <p className="mt-4 text-sm">Your safety, our collective mission.</p>
@@ -341,8 +327,8 @@ const Footer = () => (
                 <div>
                     <h3 className="text-sm font-semibold text-slate-200 tracking-wider uppercase">Quick Links</h3>
                     <ul className="mt-4 space-y-2">
-                        <li><a href="#" className="hover:text-white">Report Incident</a></li>
-                        <li><a href="#" className="hover:text-white">Volunteer Portal</a></li>
+                        <li><a href="/complain" className="hover:text-white">Report Incident</a></li>
+                        <li><a href="/dashboard" className="hover:text-white">Volunteer Portal</a></li>
                         <li><a href="#" className="hover:text-white">How It Works</a></li>
                     </ul>
                 </div>
@@ -356,8 +342,7 @@ const Footer = () => (
                 <div>
                     <h3 className="text-sm font-semibold text-slate-200 tracking-wider uppercase">Contact</h3>
                     <ul className="mt-4 space-y-2">
-                        <li className="flex items-center gap-2"><Mail size={16} /><a href="mailto:support@projectpukaar.com" className="hover:text-white">support@projectpukaar.com</a></li>
-                        <li className="flex items-center gap-2"><Phone size={16} /><a href="tel:+1234567890" className="hover:text-white">+1 (234) 567-890</a></li>
+                        <li className="flex items-center gap-2"><Mail size={16} /><a href="mailto:mdrayaanpasha@gmail.com" className="hover:text-white">mdrayaanpasha@gmail.com</a></li>
                     </ul>
                 </div>
             </div>
